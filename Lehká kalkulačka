@@ -1,26 +1,52 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
 
+using System.ComponentModel.Design;
 
+Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("Tvá osobní kalkulačka :)))");
 
+
+Console.ForegroundColor = ConsoleColor.Cyan;
 string pokracovat = "ano";
 while (pokracovat == "ano")
 {
 
-    double cislo1 = 0;
-    double cislo2 = 0;
+    int cislo1 = 1;
+    int cislo2 = 1;
+
+    bool bool1 = false;
+    bool bool2 = false;
 
 
-    Console.WriteLine("Zadej číslo: ");
-    string nazev1 = Console.ReadLine();
-    double.TryParse(nazev1, out cislo1);
+    do
+    {
+        Console.WriteLine("Zadej číslo: ");
 
-    Console.WriteLine("Zadej 2. číslo: ");
-    string nazev2 = Console.ReadLine();
-    double.TryParse(nazev2, out cislo2);
-    string prikaz = "ano";
+        string nazev1 = Console.ReadLine();
+        bool1 = int.TryParse(nazev1, out cislo1);
+        if (bool1 == false)
+        {
+            Console.Write("!!!!!! ");
+        }
+        
+
+    } while (!bool1);
+    
+
+    do
+    {
+        Console.WriteLine("Zadej 2. číslo: ");
+        string nazev2 = Console.ReadLine();
+        bool2 = int.TryParse(nazev2, out cislo2);
+        if (bool2 == false)
+        {
+            Console.Write("!!!!!!! ");
+        }
+     } while (!bool2);
+
+string prikaz = "ano";
     while (prikaz == "ano")
     {
         Console.Write("Napiš jakou operaci chceš s čísly provést:");
@@ -42,14 +68,26 @@ while (pokracovat == "ano")
         {
             Console.WriteLine(cislo1 / cislo2);
         }
+        else if (znamenko == "^")
+        {
+            Console.WriteLine(cislo1 ^ cislo2);
+        }
+        else if (znamenko == "%")
+        {
+            Console.WriteLine(cislo1 % cislo2);
+        }
+
         else
-            Console.WriteLine("Špatně!");
+         
+        Console.WriteLine("Špatně!");
+        
         Console.WriteLine("Chceš provést další operaci s těmito čísly? [ano/ne] ");
         prikaz = Console.ReadLine();
 
     }
    
-    Console.WriteLine("Chceš si zadat další příklad? [ano/ne]");
+    Console.WriteLine("Přejete si zadat další příklad? [ano/ne]");
     pokracovat = Console.ReadLine();
 }
-Console.WriteLine("Chápu, pro dnešek už bylo matiky dost.:)))");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("Pro dnešek už bylo matiky dost.:)))");
