@@ -2,7 +2,6 @@
 //Console.WriteLine("Hello, World!");
 
 
-using System.ComponentModel.Design;
 
 Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("Tvá osobní kalkulačka :)))");
