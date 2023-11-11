@@ -1,0 +1,71 @@
+Console.WriteLine("Tvá osobní kalkulačka :)))");
+
+bool bool1 = false;
+bool bool2 = false;
+bool bool3 = false;
+
+
+double a = 1;
+double b = 1;
+double c = 1;
+double kofx = 1;
+
+
+do
+{
+    Console.WriteLine("Napiš koeficient a");
+    string kofa = Console.ReadLine();
+    bool1 = double.TryParse(kofa, out a);
+    if (bool1 == false)
+    {
+        Console.Write("!");
+    }
+
+} while (!bool1);
+
+
+do
+{
+    Console.WriteLine("Napiš koeficient b");
+    string kofb = Console.ReadLine();
+    bool2 = double.TryParse(kofb, out b);
+    if (bool2 == false)
+    {
+        Console.Write("!");
+    }
+
+} while (!bool2);
+
+do
+{
+    Console.WriteLine("Napiš koeficient c");
+    string kofc = Console.ReadLine();
+    bool3 = double.TryParse(kofc, out c);
+    if (bool3 == false)
+    {
+        Console.Write("!");
+    }
+
+} while (!bool3);
+
+
+
+double d = b * b - 4 * a * c;
+
+if (d == 0)
+{
+    Console.WriteLine("Rovnice má 1 řešení: x = " + b / 2 * a);
+
+}
+else if (d < 0)
+{
+    Console.WriteLine("Rovnice nemá řešení");
+}
+else
+{
+    Console.WriteLine("Rovnice má 2 řešení: ");
+    Console.WriteLine("x1 = " + (- b + Math.Sqrt(d)) / 2 * a);
+    Console.WriteLine("x2 = " + (- b - Math.Sqrt(d)) / 2 * a);
+}
+
+Console.WriteLine("Chcete zadat parametr x ?");
