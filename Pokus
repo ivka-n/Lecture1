@@ -1,5 +1,4 @@
 
-
 Console.WriteLine("Tvá osobní kalkulačka :)))");
 
 bool bool1 = false;
@@ -82,10 +81,10 @@ while (pokracovat == "y")
     string odpoved = "a";
     while (odpoved == "a")
     {
-        Console.WriteLine("Chcete napsat parametr x ?");
+        
         do
         {
-            Console.WriteLine("Napiš parametr x");
+            Console.WriteLine("Chcete napsat parametr x? Pokud ne napiste a");
             string parx = Console.ReadLine();
             bool1 = double.TryParse(parx, out x);
             if (bool1 == false)
@@ -99,7 +98,7 @@ while (pokracovat == "y")
         Console.WriteLine("Chcete napsat parametr x ?");
         odpoved = Console.ReadLine();
     }
-    Console.WriteLine("Chcete zadat kvad r ? y")
+    Console.WriteLine("Chcete zadat kvadratickou rovnici? Pokud ano napiš y");
     pokracovat = Console.ReadLine();
 
 }
