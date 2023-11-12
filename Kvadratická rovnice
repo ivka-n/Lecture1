@@ -1,0 +1,107 @@
+Console.WriteLine("Spočítám kvadratickou rovnici");
+
+bool bool1;
+
+
+double a;
+double b;
+double c;
+double x;
+string textoduzivatele;
+double vysledek;
+
+
+
+
+string pokracovat = "a";
+while (pokracovat == "a")
+{
+
+
+    double ziskatcislo()
+    {
+        do
+        {
+            textoduzivatele = Console.ReadLine();
+            bool1 = double.TryParse(textoduzivatele, out vysledek);
+          if (!bool1)
+            {
+                Console.WriteLine("Napište číslo!");
+            }
+
+
+        } while (!bool1);
+        return vysledek;
+
+    }
+
+    Console.WriteLine("Napište koeficient a");
+    do
+    {
+        a = ziskatcislo();
+        if (a == 0)
+        {
+            Console.WriteLine("Koeficient a nesmí být 0, zadejte nové číslo:");
+        }
+
+    } while (a == 0);
+    Console.WriteLine("Napište koeficient b");
+    b = ziskatcislo();
+    Console.WriteLine("Napište koeficient c");
+    c = ziskatcislo();
+
+
+
+
+
+
+    double d = b * b - 4 * a * c;
+
+
+    if (b == 0 && c == 0)
+    {
+        Console.WriteLine("Rovnice má nekonečně mnoho řešení");
+    }
+    else if (d == 0)
+    {
+        Console.WriteLine("Rovnice má 1 řešení:");
+        Console.WriteLine($"x = {-b} / 2 * {a} = {-b / (2 * a)} ");
+    }
+    else if (d < 0)
+    {
+        Console.WriteLine("Rovnice nemá řešení");
+    }
+    else
+    {
+        Console.WriteLine("Rovnice má 2 řešení: ");
+        Console.WriteLine($"x1 = {a}x^2 + {b}x + {c} = {(-b + Math.Sqrt(d)) / (2 * a)}");
+        Console.WriteLine($"x2 = {a}x^2 + {b}x + {c} = {(-b - Math.Sqrt(d)) / (2 * a)}");
+    }
+
+
+    do
+    {
+        Console.WriteLine("Napiš parametr x. Pokud nechcete, napiste ne");
+        textoduzivatele = Console.ReadLine();
+        
+        if (textoduzivatele == "ne")
+        {
+           
+            break;
+        }
+        bool1 = double.TryParse(textoduzivatele, out x);
+        if (bool1)
+        {
+            Console.WriteLine($"{a}*{x}^2 + {b}*{x} + {c} = {a * x * x + x * b + c}");
+        }
+        else
+        {
+            Console.WriteLine("X musí být číslo!");
+        }
+        
+    } while (true);
+
+    Console.WriteLine("Chcete zadat další kvadratickou rovnici? Pokud ano napište a");
+    pokracovat = Console.ReadLine();
+
+}
