@@ -2,13 +2,12 @@ Console.WriteLine("Spočítám kvadratickou rovnici");
 
 bool bool1;
 
-
 double a;
 double b;
 double c;
 double x;
 string textoduzivatele;
-double vysledek;
+double cislooduzivatele;
 
 
 
@@ -18,27 +17,27 @@ while (pokracovat == "a")
 {
 
 
-    double ziskatcislo()
+    double finalnicislo()
     {
         do
         {
             textoduzivatele = Console.ReadLine();
-            bool1 = double.TryParse(textoduzivatele, out vysledek);
-          if (!bool1)
+            bool1 = double.TryParse(textoduzivatele, out cislooduzivatele);
+            if (!bool1)
             {
                 Console.WriteLine("Napište číslo!");
             }
 
 
         } while (!bool1);
-        return vysledek;
+        return cislooduzivatele;
 
     }
 
     Console.WriteLine("Napište koeficient a");
     do
     {
-        a = ziskatcislo();
+        a = finalnicislo();
         if (a == 0)
         {
             Console.WriteLine("Koeficient a nesmí být 0, zadejte nové číslo:");
@@ -46,9 +45,9 @@ while (pokracovat == "a")
 
     } while (a == 0);
     Console.WriteLine("Napište koeficient b");
-    b = ziskatcislo();
+    b = finalnicislo();
     Console.WriteLine("Napište koeficient c");
-    c = ziskatcislo();
+    c = finalnicislo();
 
 
 
@@ -83,10 +82,10 @@ while (pokracovat == "a")
     {
         Console.WriteLine("Napiš parametr x. Pokud nechcete, napiste ne");
         textoduzivatele = Console.ReadLine();
-        
+
         if (textoduzivatele == "ne")
         {
-           
+
             break;
         }
         bool1 = double.TryParse(textoduzivatele, out x);
@@ -98,7 +97,7 @@ while (pokracovat == "a")
         {
             Console.WriteLine("X musí být číslo!");
         }
-        
+
     } while (true);
 
     Console.WriteLine("Chcete zadat další kvadratickou rovnici? Pokud ano napište a");
