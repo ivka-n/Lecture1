@@ -1,8 +1,7 @@
-Console.WriteLine("Hello, World!");
 Console.WriteLine("Napiš trojúhelník, čtverec, obdelník pro výpočet obvodu a obsahu.");
 string OdpovedUzivatele = Console.ReadLine();
 
-if (OdpovedUzivatele == "čtverec")
+if (OdpovedUzivatele == "C")
 {
     Console.WriteLine("Napiš stranu a");
     string odpoved = Console.ReadLine();
@@ -11,7 +10,7 @@ if (OdpovedUzivatele == "čtverec")
     Console.WriteLine($"Obvod ctverce je {cislo * 4}");
     Console.WriteLine($"Obsah ctverce je {cislo * cislo}");
 }
-if (OdpovedUzivatele == "obdélník")
+if (OdpovedUzivatele == "O")
 {
     Console.WriteLine("Napiš stranu a");
     string odpoved = Console.ReadLine();
@@ -24,4 +23,22 @@ if (OdpovedUzivatele == "obdélník")
     Console.WriteLine($"Obvod ctverce je {(cislo + cislo2) * 2}");
     Console.WriteLine($"Obsah ctverce je {cislo * cislo2}");
 }
-if (OdpovedUzivatele == "trojúhelník") 
+if (OdpovedUzivatele == "T")
+{
+    Console.WriteLine("Napiš stranu a");
+    string odpoved = Console.ReadLine();
+
+    Console.WriteLine("Napiš stranu b");
+    string odpoved2 = Console.ReadLine();
+
+    Console.WriteLine("Napiš stranu c");
+    string odpoved3 = Console.ReadLine();
+
+    double cislo, cislo2, cislo3;
+    double.TryParse(odpoved, out cislo);
+    double.TryParse(odpoved2, out cislo2);
+    double.TryParse(odpoved3, out cislo3);
+    Console.WriteLine($"Obvod ctverce je {cislo + cislo2 + cislo3}");
+    double s = (cislo + cislo2 + cislo3)/2;
+    Console.WriteLine($"Obsah ctverce je {Math.Sqrt(s*(s-cislo)* (s - cislo2) * (s - cislo3))}");
+}
