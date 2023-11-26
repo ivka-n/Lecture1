@@ -5,18 +5,20 @@
 // && a zaroven
 // || staci aby jedna z podminek byla pravda - v podstate nebo
 
+// Pokud se ti bude chtit muzes udelat funkci pro Console.WriteLine("Napis stranu ...") nebo Console.WriteLine("Obvod/Obsah je ...")
 
 
-
-string[] tvary = new string[] { "ctverec", "obdelnik", "trojuhelnik", "kruh", "krychle", "kvadr", "kuzel" };
+string[] tvary = new string[] { "ctverec", "obdelnik", "trojuhelnik", "kruh", "krychle", "kvadr", "kuzel", "koule"};
 
 
 void VytisknoutPole(string[] pole)
 {
+    Console.WriteLine("Vyberte tvar - napište jeho číslo, pro spočítání jeho hodnot.");
     for (int i = 0; i < pole.Length; i++)
     {
         Console.WriteLine($"{i + 1}) {pole[i]}");
     }
+        Console.WriteLine("Pro ukončení programu stiskněte 0");
 }
 
 
@@ -33,11 +35,12 @@ double FinalniCislo()
         {
             Console.WriteLine("Napiste cislo!");
         }
-        if (CisloOdUzivatele < 0)
+        else if (CisloOdUzivatele < 0 || CisloOdUzivatele == 0)
         {
             Console.WriteLine("Napiste cislo vetsi nez 0");
         }
-    } while (!pravda);
+        
+    } while (!pravda || CisloOdUzivatele < 0 || CisloOdUzivatele == 0);
 
     return CisloOdUzivatele;
 
@@ -66,25 +69,62 @@ int VolbaInt()
 
 void ctverec()
 {
-    Console.WriteLine();
+    Console.WriteLine("Byl vybrán čtverec.");
+    Console.WriteLine("Napiš délku strany a (v cm): ");
     double a = FinalniCislo();
-    Console.WriteLine();
+    Console.WriteLine($"Obvod čtverce se stranou a = {a} je {a * 4} cm");
+    Console.WriteLine($"Obsah čtverce se stranou a = {a} je {a * a} cm2");
 
 }
 
 
 void obdelnik()
 {
-   // pokud budou a b stejne jde o ctverec
+    Console.WriteLine("Byl vybrán obdélník.");
+    Console.WriteLine("Napiš délku strany a (v cm): ");
+    double a = FinalniCislo();
+    Console.WriteLine("Napiš délku strany b (v cm): ");
+    double b = FinalniCislo();
+    if (a == b)
+    {
+        Console.WriteLine("Právě jsi vytvořil čtverec :))");
+        Console.WriteLine($"Obvod čtverce se stranou a = {a} je {a * 4} cm");
+        Console.WriteLine($"Obsah čtverce se stranou a = {a} je {a * a} cm2");
+    }
+    else
+    {
+        Console.WriteLine($"Obvod obdélníku se stranou a = {a}, b = {b} je {(a + b) * 2} cm");
+        Console.WriteLine($"Obsah obdélníku se stranou a = {a}, b = {b} je {a * b} cm2");
+    }
 
 
+    // pokud budou a b stejne jde o ctverec
 }
 
 
-void trojuhelniku()
+void trojuhelnik()
 {
-  // bacha na délky v trojuhelniku
+    Console.WriteLine("Byl vybrán trojúhelník.");
+    Console.WriteLine("Napiš délku strany a (v cm): ");
+    double a = FinalniCislo(); 
+    Console.WriteLine("Napiš délku strany b (v cm): ");
+    double b = FinalniCislo(); 
+    Console.WriteLine("Napiš délku strany c (v cm): ");
+    double c = FinalniCislo();
+    if (a > (b + c) || b > (a + c) || c > (a + b))
+    {
+        Console.WriteLine("Tohle není trojúhelník!");       
+    }
+    else
+    {
+        Console.WriteLine($"Obvod trojúhelníku se stranou a = {a}, b = {b}, c = {c} je {a + b + c} cm");
+        double s = (a + b + c)/2;
+        Console.WriteLine($"Obsah trojúhelníku se stranou a = {a}, b = {b}, c = {c} je {Math.Sqrt(s * (s - a) * (s - b) * (s - c))} cm2");
+    }
 }
+
+
+
 
 
 
@@ -94,16 +134,18 @@ while (true)
 {
     VytisknoutPole(tvary);
     int volba;
-volba = VolbaInt();
-
+    volba = VolbaInt();
+    
     switch (volba)
     {
         case 1:
             ctverec();
             break;
         case 2:
+            obdelnik();
             break;
         case 3:
+            trojuhelnik();
             break;
         case 4:
             break;
@@ -111,7 +153,12 @@ volba = VolbaInt();
             break;
         case 6:
             break;
+        case 7:
+            break;
+        case 8:
+            break;
         case 0:
+            Console.WriteLine("Konec programu :))");
             Environment.Exit(0);
             break;
         default:
@@ -119,5 +166,5 @@ volba = VolbaInt();
             break;
 
     }
+    Console.WriteLine();
 }
-
