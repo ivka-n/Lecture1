@@ -124,7 +124,16 @@ void trojuhelnik()
 }
 
 
+void kruh()
+{
+    Console.WriteLine("Byl vybrán kruh.");
+    Console.WriteLine("Napiš poloměr kruhu (v cm): ");
+    double r = FinalniCislo();
+    Console.WriteLine($"Obvod kruhu s poloměrem r = {2 * Math.PI * r}");
+    //Console.WriteLine(r.ToString("N3")); //// pro počet des míst
 
+
+}
 
 
 
@@ -148,6 +157,7 @@ while (true)
             trojuhelnik();
             break;
         case 4:
+            kruh();
             break;
         case 5:
             break;
