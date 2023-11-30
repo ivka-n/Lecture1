@@ -1,0 +1,123 @@
+//// See https://aka.ms/new-console-template for more information
+//Console.WriteLine("Hello, World!");
+
+
+float[]ScaleVector(float[] vector, float scalar)
+{
+    float[] myVector = new float[vector.Length];
+
+    for (int i = 0; i < vector.Length; i++)
+    {
+        //Console.WriteLine(myVector[i]);
+        //float scalar1 = scalar * myVector[i]; // - Muj pokus
+        //Console.WriteLine(scalar1);
+
+        myVector[i] = vector[i] * scalar;
+    }
+
+    return myVector;
+}
+
+float[] newVector = new float[2];
+newVector[0] = 10;
+newVector[1] = 1;
+PrintVector(newVector);
+
+
+float scalar = 2.5f;
+
+float[] myVector = ScaleVector(newVector,scalar);
+PrintVector(myVector);
+
+
+void PrintVector(float[] array)
+{
+    Console.WriteLine("vector");
+    for (int i = 0; i < array.Length; i++)
+    {       
+        Console.WriteLine(array[i]);
+    }
+}
+
+
+
+
+
+
+
+float[] AddVector(float[] vector, float[] vector2)
+{
+    float[] newVector = new float[vector.Length];
+
+    for (int i = 0; i < vector.Length; i++)
+    {
+        //Console.WriteLine(myVector[i]);
+        //float scalar1 = scalar * myVector[i]; // - Muj pokus
+        //Console.WriteLine(scalar1);
+
+        newVector[i] = vector[i] + vector2[i];
+    }
+
+    return newVector;
+}
+
+
+
+
+string name = "John";  // string je v podstate takz pole
+Console.WriteLine(name[0]); // vzpzse se pouze J
+
+char[] letters = name.ToCharArray(); // stringove pole
+letters[0] = 'a'; // pro jednotliva pismena se pisi pouze ''
+string newName = new string(letters);
+
+string ReplaceAWithStar (string text)
+{
+    char[] letters = text.ToCharArray();
+    for (int i = 0; i < text.Length; i++)     // v tehle funkci mam jasne definovanom, ze misto a se napise *
+    {
+        if (letters[i] == 'a' )
+        {
+            letters[i] = '*';
+
+        }
+
+    }
+    string output = new string(letters);
+
+    return output;
+}
+
+string myText = "aaagbfwsbvl2agahnag";
+
+string newText = ReplaceAWithStar(myText);
+Console.WriteLine(newText);
+
+
+
+// uplne to samy jako predesla funkce jenom tady neni definovano za co (napr za a) se co (napr *) napise
+string ReplaceAWithStar1(string text, char find, char replace) 
+{
+    char[] letters = text.ToCharArray();
+    for (int i = 0; i < text.Length; i++)
+    {
+        if (letters[i] == find)
+        {
+            letters[i] = replace;
+
+        }
+
+    }
+    string output = new string(letters);
+
+    return output;
+}
+
+string myText1 = "aaagbfwsbvl2agahnag";
+
+string newText1 = ReplaceAWithStar1(myText, 'a', ':'); // tady urcuji co (a) se za co (:) vymeni
+Console.WriteLine(newText1);
+
+// pro urceni poctu des mist
+float i = 10f / 3f;
+Console.WriteLine(i.ToString("N3"));
