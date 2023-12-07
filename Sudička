@@ -3,7 +3,7 @@
 
 string[] vlastnost = new string[] { "empatii", "laskavost", "vytrvalost", "moudrost", "intuici", "hbitost" };
 
-void Vyber(string[] pole)
+void Vyber(string[] pole) // musis si k tem hodnotam vlastnost priradit cislo a to pak random vvyvolat
 {
     for (int i = 0; i < pole.Length; i++)
     {
