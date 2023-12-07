@@ -1,0 +1,88 @@
+// rekurze - ta funkce se jakobz vola sama ???
+
+int Fibonacci(int n)
+{
+    if (n == 1)
+    {
+        return 1;
+    }
+    if (n == 0)
+    {
+        return 0;
+    }
+
+    int x = Fibonacci(n - 1);
+    int y = Fibonacci(n - 2);
+    return x + y;
+}
+
+//Console.WriteLine(Fibonacci(4));
+
+
+long Factorial(long f) // long je int ale 2krat presnejsi??
+{
+    if (f == 1)
+    {
+        return 1;
+    }
+    long previous = Factorial(f - 1);
+    return f * previous;
+}
+Console.WriteLine(Factorial(10));
+
+//for (int i = 1; i < 10; i++)
+//{
+//    Console.WriteLine(Factorial(i));
+//}
+
+
+
+int[] numbers = new int[] { 5, 6, 88, 0, -1 }; // normalni pole
+int[,] tictactoe = new int[,] { {1, 0, 2 }, {3, 5, 8 }, { 8, 10, -4} }; // pole s vice souradnicemi - dimenzemi = 2D arraz, ale musi byt v kazdem tom poli stejny pocet hodnot
+
+
+//Console.WriteLine(tictactoe[1, 2]);
+
+//for (int i = 0; i < tictactoe.GetLength(0); i++) // vypise mi vsechny souradnice v tom poli tictactoe
+//{
+//    for (int j = 0; j < tictactoe.GetLength(1); j++)
+//    {
+//        Console.WriteLine(tictactoe[i, j]);
+//    }
+
+//}
+
+
+int[][] insaneTictactoe = new int[][] { new[] { 1, 2, 3, 5}, // pro "nepravidelne" pole pole = jagged arraz - v prvnim mam 4 souradnice, v druhem jenom 3 atd - nemusim mit stejny pocet hodnot v kazdem poli
+                                        new [] { 2, 96, -6},
+                                        new[] { -9, 6} };
+
+Console.WriteLine($"Delka insaneTictactoe: " + insaneTictactoe.Length);
+Console.WriteLine($"Hodnota v 1. poli, 0. cislo: " + insaneTictactoe[1][0]);
+
+insaneTictactoe[1] = new int[] { 2, 56, -9, 85, 25 }; // prepise mi hodnoty v insaneTictactoe na 2. pozici (= prepise mi to hodnoty 2, 96, -6)
+
+
+
+Random rand = new Random(); //  do zavorky muzu napsat jakekoliv cislo a bude mi to vyhazovat porad to same cislo = seed
+int nahoda = rand.Next(); // do zavorky muzu napsat do jakeho cisla mi to napise random cislo - kdyz dam do zavorky 100 - napise mi to cislo od 0 do 100
+int OdDoNahoda = rand.Next(-30, 100);
+Console.WriteLine(nahoda);
+Console.WriteLine(OdDoNahoda);
+// existuje i pro float, long ...
+int NahodaMaxMin = rand.Next(int.MinValue, int.MaxValue);
+Console.WriteLine(NahodaMaxMin);
+Console.WriteLine();
+
+int[] unsorted = new int[10]; // pole, ktere v sobe bude mit 10 hodnot
+for (int i = 0; i < unsorted.Length; i++) // napise mi to tech nejakz pocet nahodnych cisel (protoze moje pole je dlouhe na 10 hodnit, napise mi to 10 nahodnych cisel)
+{
+    unsorted[i] = rand.Next(100);
+}
+
+Array.Sort(unsorted); // seradi mi to od nejvet po nejmen
+
+for (int i = 0; i < unsorted.Length; i++) // pro vypsani toho pole unsorted
+{
+    Console.WriteLine(unsorted[i]);
+}
