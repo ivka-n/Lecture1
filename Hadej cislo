@@ -1,0 +1,95 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+
+
+
+
+//var rand = new Random();
+
+//var bytes = new byte[1];
+//rand.NextBytes(bytes);
+
+//foreach (byte byteValue in bytes)
+//    Console.Write(byteValue);
+//Console.WriteLine();
+
+
+
+
+Console.ForegroundColor = ConsoleColor.Magenta;
+Console.WriteLine("Myslím si přirozené číslo od 0 do 1000, hádej které.");
+
+static int GenNum()
+{
+    Random mhledanecislo = new Random();
+    int hledanecislo = mhledanecislo.Next(0,1000);
+    Console.WriteLine(hledanecislo);
+    return hledanecislo;
+}
+
+
+int hledanecislo = GenNum();
+
+
+
+int guessCounter = 0;
+
+while (true)
+{
+    Console.ForegroundColor = ConsoleColor.White;
+
+    double typ = finalnicislo();
+
+
+
+    if (hledanecislo > typ)
+    {
+        guessCounter++;
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
+
+        Console.WriteLine("Přidej, tvůj {0} pokus.", guessCounter);
+    
+    }
+
+    if (hledanecislo < typ)
+    {
+        guessCounter++;
+
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+        Console.WriteLine("Uber tvůj {0} pokus.", guessCounter);
+
+
+    }
+
+    if (hledanecislo == typ)
+    {
+       
+        Console.WriteLine("Správně");
+        Console.WriteLine("Počet pokusů: {0}", guessCounter);
+        break;
+    }
+
+}
+
+double finalnicislo()
+{
+    bool bool1;
+    double cislooduzivatele;
+    do
+    {
+        string textoduzivatele = Console.ReadLine();
+        bool1 = double.TryParse(textoduzivatele, out cislooduzivatele);
+        if (!bool1)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Napiš číslo!");
+        }
+
+
+    } while (!bool1);
+    return cislooduzivatele;
+
+}
