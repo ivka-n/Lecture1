@@ -1,0 +1,42 @@
+
+
+
+string[] vlastnost = new string[] { "empatii", "laskavost", "vytrvalost", "moudrost", "intuici", "hbitost" };
+
+void Vyber(string[] pole)
+{
+    for (int i = 0; i < pole.Length; i++)
+    {
+        
+
+    }
+}
+
+
+
+
+void Vber (string jmeno)
+{
+    string 
+
+}
+
+
+
+
+
+while (true)
+{
+    Console.WriteLine("Napis jmeno, pro vestbu pro ukonceni napis *");
+    string jmeno = Console.ReadLine();
+    if (jmeno == "*")
+    {
+        break;
+    }
+    else
+    {
+        Console.WriteLine($"{jmeno} dostane ");
+        
+
+    }
+}
