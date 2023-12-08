@@ -1,42 +1,39 @@
 
 
 
-string[] vlastnost = new string[] { "empatii", "laskavost", "vytrvalost", "moudrost", "intuici", "hbitost" };
+string[] vlastnost = new string[] { "empatii", "laskavost", "vytrvalost", "moudrost", "intuici", "hbitost", "ochotna", "laskavost", "pravdomluvnost", "poctivost", "pečlivost", "rozvážnost", "upřímnost", "tolerance", "věrnost" };
 
-void Vyber(string[] pole) // musis si k tem hodnotam vlastnost priradit cislo a to pak random vvyvolat
+void Vyber(string[] pole)
 {
-    for (int i = 0; i < pole.Length; i++)
-    {
-        
-
-    }
+        Random rand = new Random();
+        int j = rand.Next(9);
+        Console.WriteLine(pole[j]);
+    
 }
 
-
-
-
-void Vber (string jmeno)
-{
-    string 
-
-}
+//Random rand = new Random();
+//int j = rand.Next(9);
+//Console.WriteLine(vlastnost[j]);
 
 
 
 
 
-while (true)
+do
 {
     Console.WriteLine("Napis jmeno, pro vestbu pro ukonceni napis *");
     string jmeno = Console.ReadLine();
     if (jmeno == "*")
     {
+        Console.WriteLine("Konec věštby");
         break;
     }
     else
     {
-        Console.WriteLine($"{jmeno} dostane ");
-        
+        Console.Write($"{jmeno} dostane ");
+        Vyber(vlastnost);
 
     }
-}
+} while (true);
+
+
