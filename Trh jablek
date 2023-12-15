@@ -1,0 +1,62 @@
+
+double FinalniCislo(string type)
+{
+    double CisloOdUzivatele;
+    bool pravda;
+    Console.WriteLine("{0}", type);
+    do
+    {
+        string TextOdUzivatele = Console.ReadLine();
+
+        pravda = double.TryParse(TextOdUzivatele, out CisloOdUzivatele);
+        if (!pravda)
+        {
+            Console.WriteLine("Napiš číslo!");
+        }
+        else if (CisloOdUzivatele < 0 || CisloOdUzivatele == 0)
+        {
+            Console.WriteLine("Napiš číslo větsí než 0");
+        }
+
+    } while (!pravda || CisloOdUzivatele < 0 || CisloOdUzivatele == 0);
+
+    return CisloOdUzivatele;
+
+}
+
+
+int guessCounter = 0;
+double MnozJablek = FinalniCislo("Napis kolik kg jablek mam.");
+while (true)
+{
+    double ProdJabka = FinalniCislo($"Napis kolik jablek chces prodat");
+    double rozdiljab = MnozJablek - ProdJabka;
+
+    if (MnozJablek > ProdJabka)
+    {
+        Console.WriteLine($"Prodala jsem {ProdJabka} kg jablek, zbylo mi {rozdiljab} kg ");
+        
+    }
+    if (rozdiljab < ProdJabka)
+    {
+        Console.WriteLine($"Nemam dost jablek, mam pouze {rozdiljab}");
+        break;
+    }
+}
+
+
+//while (true)
+//{
+//    double ProdJabka = FinalniCislo($"Napis kolik jablek chces z {MnozJablek} prodat");
+//    double rozdiljab = MnozJablek - ProdJabka;
+//    Console.WriteLine($"Napis kolik jablek chces z {rozdiljab} prodat");
+//    guessCounter++;
+//    if (rozdiljab < ProdJabka)
+//    {
+//        Console.WriteLine($"Tolik jablek uz nemam, mam pouze {rozdiljab}");
+//        Console.WriteLine("Udelal jsi {0} nakupu", guessCounter);
+//        break;
+//    }
+
+//}
+
