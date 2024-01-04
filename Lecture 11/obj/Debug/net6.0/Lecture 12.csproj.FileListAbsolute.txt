@@ -1,0 +1,17 @@
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\Lecture 12.exe
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\Program.cs
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\soubor.txt
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\Lecture 12.deps.json
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\Lecture 12.runtimeconfig.json
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\Lecture 12.dll
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\Lecture 12.pdb
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.AssemblyInfoInputs.cache
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.AssemblyInfo.cs
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.csproj.CoreCompileInputs.cache
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.dll
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\refint\Lecture 12.dll
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.pdb
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\Lecture 12.genruntimeconfig.cache
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\obj\Debug\net6.0\ref\Lecture 12.dll
+C:\Users\ivana.novotna\source\repos\Lecture 11\Lecture 11\bin\Debug\net6.0\questions.data
