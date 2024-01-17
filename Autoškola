@@ -24,7 +24,8 @@ static string[] MichacOtazek(string[] Michac)
 }
 
 ZkOtazky = MichacOtazek(ZkOtazky);
-Console.WriteLine("Vitej v kurzu autoskoly, pro ukonceni napis \"exit\"");
+Console.WriteLine("Vítej v kurzu autoškoly, pro ukončení napiš \"exit\"");
+Console.WriteLine();
 int SpravnaOdp = 0;
 int SpatnaOdp = 0;
 
@@ -59,21 +60,21 @@ for (int i = 0; i < ZkOtazky.Length; i++)
 
         if (!SeznamOdp.Contains(OdpovedOdUz))
         {
-            Console.WriteLine("Neplatny vstup."); // prepsat
+            Console.WriteLine("Neplatný vstup.");
         }
     }
     Console.Clear();
-    if (OdpovedOdUz == RozdelRadek[1]) // kdyz je odpoved spravna tak..
+    if (OdpovedOdUz == RozdelRadek[1])
     {
         SpravnaOdp++;
-        Console.WriteLine("Spravna odpoved ;))");
+        Console.WriteLine("Správná odpověď ;))");
     }
     else
     {
         SpatnaOdp++;
-        Console.WriteLine("Spatna odpoved :((");
+        Console.WriteLine("Špatná odpověď :((");
 
-        Console.WriteLine("Spravna odpoved je:");
+        Console.WriteLine("Správná odpověď je:");
 
         if (RozdelRadek[1] == "A")
         {
@@ -109,7 +110,8 @@ void ProcentUspesnost()
 {
     Console.WriteLine("Konec testu");
     float PocetOtazek = SpravnaOdp + SpatnaOdp;
-    Console.WriteLine($"Spravnych otazek: {SpravnaOdp}");
-    Console.WriteLine($"Tva procentualni uspesnost byla {SpravnaOdp / PocetOtazek * 100}%");
+    Console.WriteLine($"Správných otázek: {SpravnaOdp} z {PocetOtazek}");
+    Console.WriteLine($"Tvá procentuální úspěšnost byla {SpravnaOdp / PocetOtazek * 100}%");
 }
+
 
